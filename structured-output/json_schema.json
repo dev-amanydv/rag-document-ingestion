@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "title": "Review",
+  "properties": {
+    "key_themes": {
+      "type": "array",
+      "description": "write down all the key themes discussed in review",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string",
+      "description": "A brief summary of the review"
+    },
+    "sentiment": {
+      "type": "string",
+      "description": "return sentiment of the review",
+      "enum": ["pos", "neg"]
+    },
+    "pros": {
+      "description": "Write down all the pros inside a list",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "cons": {
+      "description": "Write down all the cons inside a list",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "name": {
+      "description": "Name of the product",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "key_themes",
+    "summary",
+    "sentiment"
+  ],
+  "additionalProperties": false
+}
